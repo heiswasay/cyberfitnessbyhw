@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cyber Fitness — Trainers &amp; team</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Aileron';font-weight:400;src:url(/_blob/ac6100a496d7e0e32d666465c2759312) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:600;src:url(/_blob/f0a3b54c6c0490c7808f910f656adcd3) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:700;src:url(/_blob/1a6eabb20935006830858b9ab22d7603) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:800;src:url(/_blob/05347dd3a3a98f133849cfc2ffb7889d) format('woff2')}
+@font-face{font-family:'Archivo';font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/856990c91645be07e259db49d0475b43) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/bd798f073e227f7c230f5c83deee1174) format('woff2')}
+</style>
+<style>
+body{margin:0;background:#FFF7F0;color:#1C0A1B;font-family:'Aileron',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#ED3159;text-decoration:none}a:hover{color:#480E43}
+h1,h2{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-style:italic;text-transform:uppercase;margin:0}h3{font-family:'Aileron',system-ui,sans-serif;margin:0}
+p{margin:0}
+img{display:block}
+</style>
+</helmet>
+<div style="width: 100%; min-width: 0; background: #FFF7F0; overflow: hidden;">
+<dc-import name="Nav" active="trainers" hint-size="100%,77px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 64px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 32px;">
+  <div style="display: flex; flex-direction: column; gap: 20px; max-width: 780px;">
+    <p style="font-size: 14px; color: #6B5A69;"><a href="Main.dc.html" style="color: #6B5A69;">Home</a> / Trainers &amp; team</p>
+    <h1 style="font-size: clamp(36px, 4.2vw, 60px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 800;">The people who <span style="color: #ED3159;">show up for you</span>, every day.</h1>
+  </div>
+  <p style="font-size: 18px; line-height: 1.6; color: #5E4D5C; max-width: 420px;">Certified trainers, registered dietitians and a support team dedicated to making online fitness feel personal.</p>
+</section>
+
+<!-- COACHES -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 104px; display: flex; flex-direction: column; gap: 32px;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em;">Coaches</h2>
+    <span style="flex: 1; height: 1px; background: #F0D6DF;"></span>
+    <span style="font-size: 14px; font-weight: 700; color: #6B5A69;">9 certified trainers</span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 20px;">
+    <sc-for list="{{coaches}}" as="c" hint-placeholder-count="9">
+      <article style="border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; overflow: hidden; display: flex; flex-direction: column;">
+        <div style="position: relative; aspect-ratio: 4 / 4.2; background: #F6DCE4;">
+          <img src="{{c.img}}" alt="{{c.name}}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
+          <span style="position: absolute; left: 18px; top: 18px; padding: 7px 12px; border-radius: 999px; background: #FFFFFF; color: #480E43; font-size: 13px; font-weight: 800;">{{c.tag}}</span>
+        </div>
+        <div style="padding: 24px 26px 28px; display: flex; flex-direction: column; gap: 10px;">
+          <div>
+            <h3 style="font-size: 23px; font-weight: 700;">{{c.name}}</h3>
+            <p style="font-size: 15px; font-weight: 700; color: #480E43; margin-top: 4px;">{{c.role}}</p>
+          </div>
+          <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">{{c.bio}}</p>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<!-- NUTRITION TEAM -->
+<section style="background: #FAD0DC;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 32px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+        <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #480E43; background: #FBE836; width: fit-content; padding: 5px 10px;">Nutrition team</p>
+        <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800;">Your dietitians.</h2>
+      </div>
+      <a href="Nutrition.dc.html" style="padding: 15px 24px; border-radius: 999px; border: 1.5px solid #480E43; color: #480E43; font-size: 15px; font-weight: 800;">How diet support works</a>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 20px;">
+      <sc-for list="{{nutrition}}" as="c" hint-placeholder-count="2">
+        <article style="border-radius: 28px; background: #FFFFFF; overflow: hidden; display: flex; flex-wrap: wrap;">
+          <div style="flex: 1 1 200px; min-height: 300px; background: #F6DCE4;"><img src="{{c.img}}" alt="{{c.name}}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;"></div>
+          <div style="flex: 1 1 240px; padding: 32px 28px; display: flex; flex-direction: column; gap: 12px; justify-content: center;">
+            <span style="align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 13px; font-weight: 800;">{{c.tag}}</span>
+            <h3 style="font-size: 24px; font-weight: 700;">{{c.name}}</h3>
+            <p style="font-size: 15px; font-weight: 700; color: #ED3159;">{{c.role}}</p>
+            <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">{{c.bio}}</p>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 32px;">
+  <div style="display: flex; align-items: center; gap: 16px;">
+    <h2 style="font-size: 28px; font-weight: 800; letter-spacing: -0.02em;">Leadership &amp; member support</h2>
+    <span style="flex: 1; height: 1px; background: #F0D6DF;"></span>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(440px, 1fr)); gap: 20px;">
+    <sc-for list="{{leaders}}" as="c" hint-placeholder-count="2">
+      <article style="display: flex; gap: 24px; align-items: center; padding: 20px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8;">
+        <div style="width: 140px; height: 160px; flex-shrink: 0; border-radius: 20px; overflow: hidden; background: #F6DCE4;"><img src="{{c.img}}" alt="{{c.name}}" style="width: 100%; height: 100%; object-fit: cover; object-position: top;"></div>
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <h3 style="font-size: 22px; font-weight: 700;">{{c.name}}</h3>
+          <p style="font-size: 15px; font-weight: 700; color: #ED3159;">{{c.role}}</p>
+          <p style="font-size: 15px; line-height: 1.55; color: #5E4D5C;">{{c.bio}}</p>
+        </div>
+      </article>
+    </sc-for>
+  </div>
+</section>
+
+<!-- QUALITY -->
+<section style="background: #480E43; color: #FFFFFF;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 22px;">
+      <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #FBE836;">Trainer quality</p>
+      <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800; color: #FFFFFF;">Every coach is vetted, trained and always learning.</h2>
+      <p style="font-size: 17px; line-height: 1.6; color: #D9C9D7;">All coaches go through a rigorous Cyber Fitness onboarding before they lead a class — and keep developing with continuing education.</p>
+    </div>
+    <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; gap: 16px; padding: 24px; border-radius: 22px; background: #5C1F56;">
+        <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FAD0DC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M12 3l7 3v5c0 4.5-3 8.5-7 10-4-1.5-7-5.5-7-10V6z"></path><path d="M9 12l2 2 4-4"></path></svg>
+        <div><h3 style="font-size: 19px; font-weight: 700; color: #FFFFFF;">Certified &amp; background-checked</h3><p style="font-size: 15px; line-height: 1.55; color: #D9C9D7; margin-top: 4px;">Recognised certifications and checks for every trainer.</p></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 24px; border-radius: 22px; background: #5C1F56;">
+        <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FAD0DC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><rect x="2" y="6" width="14" height="12" rx="3"></rect><path d="M16 10.5l6-3.5v10l-6-3.5"></path></svg>
+        <div><h3 style="font-size: 19px; font-weight: 700; color: #FFFFFF;">Trained for online coaching</h3><p style="font-size: 15px; line-height: 1.55; color: #D9C9D7; margin-top: 4px;">Virtual delivery best practice, remote cueing and safety checks.</p></div>
+      </div>
+      <div style="display: flex; gap: 16px; padding: 24px; border-radius: 22px; background: #5C1F56;">
+        <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FAD0DC" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M2 8l10-5 10 5-10 5z"></path><path d="M6 10v5c3 2.5 9 2.5 12 0v-5"></path></svg>
+        <div><h3 style="font-size: 19px; font-weight: 700; color: #FFFFFF;">Continuing education</h3><p style="font-size: 15px; line-height: 1.55; color: #D9C9D7; margin-top: 4px;">Ongoing training in areas like pre- and postnatal care and sports nutrition.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 104px 32px;">
+  <div style="border-radius: 40px; clip-path: polygon(0 0, calc(100% - 64px) 0, 100% 64px, 100% 100%, 0 100%); background: #FAD0DC; padding: 64px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;">
+    <h2 style="font-size: clamp(28px, 3vw, 40px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800; max-width: 640px;">Train live with this team — starting today.</h2>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="SignUp.dc.html" style="padding: 18px 28px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 16px; font-weight: 700;">Join now</a>
+      <a href="Classes.dc.html" style="padding: 18px 28px; border-radius: 999px; border: 1.5px solid #480E43; color: #480E43; font-size: 16px; font-weight: 700;">See classes</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      coaches: [
+        { img: '/_blob/4994575c0e4cb69e0f5996533099cf16', name: 'Hijab Wasif', role: 'Founder & Lead Trainer', tag: 'Founder', bio: 'Certified strength & conditioning coach on a mission to transform how women access fitness in the digital age.' },
+        { img: '/_blob/177bc6cd012b84370d01f84c6e8637b3', name: 'Efra Shaikh', role: 'Head of Operations & Lead Trainer', tag: '6 yrs online', bio: 'Certified fitness instructor building structured, effective and easy-to-follow plans for every fitness level.' },
+        { img: '/_blob/4bb3c784a9ecf77dea55f107ae4ee9e3', name: 'Hussain Fareed', role: 'Strength Coach · Fat-loss expert', tag: '7 yrs', bio: 'Custom programs combining functional strength training and nutrition strategies for sustainable fat loss.' },
+        { img: '/_blob/a26e0b53520256c14b21bed3d9d2c70f', name: 'Moiz Mateen', role: 'Wellness & Strength Coach', tag: '5 yrs', bio: 'Level 2 certified wellness and strength coach with experience in personal and online training.' },
+        { img: '/_blob/2749c8758d463a30cb9232392fdbb191', name: 'Qafiya Ghouri', role: 'Strength & HIIT Instructor', tag: 'S&C · HIIT', bio: 'Strength & conditioning, circuit training, yoga and body transformation, with a supportive, encouraging style.' },
+        { img: '/_blob/3d588c7f2af5c275477521addf000182', name: 'Rabbia Shaikh', role: 'Strength & HIIT Instructor', tag: '2 yrs', bio: 'Safe progress, smart routines and a plan made just for you — fitness that fits your lifestyle.' },
+        { img: '/_blob/36747d447847780dd04674e3f68da86f', name: 'Madiha Mateen', role: 'Beginner Exercise Instructor', tag: 'Beginners', bio: 'Certified instructor with experience in online and one-on-one personal training for newcomers.' },
+        { img: '/_blob/dac5a81dea58eb2f9645f850c5e25a1e', name: 'Afshan Khan', role: 'International Zumba Instructor', tag: 'Zumba', bio: 'High-energy, fun Zumba classes that help you hit your goals from the comfort of home.' },
+        { img: '/_blob/0a377ac22e455e67bc462b37b0f1ad18', name: 'Faiza Shehzad', role: 'Yin & Face Yoga Instructor', tag: '10+ yrs', bio: 'Restorative Yin Yoga and Face Yoga, rooted in meditation and pranayama, for renewal and inner balance.' }
+      ],
+      nutrition: [
+        { img: '/_blob/c9c8d0c657d890ad78621d7741b87111', name: 'Fatima Zehra', role: 'Registered Dietitian', tag: '7+ yrs', bio: 'Personalised nutrition and health optimisation, tailored to your goals and medical needs.' },
+        { img: '/_blob/5ef3099458901c7a921656bacd822c47', name: 'Munaum Sultan', role: 'Nutritionist', tag: '5+ yrs', bio: 'BSc Food & Nutrition, with clinical experience at Fatima Memorial Hospital. Evidence-based guidance for lasting health.' }
+      ],
+      leaders: [
+        { img: '/_blob/478bdf2ce8af9562fc67ae337449e85f', name: 'Saba Sabir', role: 'Director, PR & Communication', bio: 'Journalist and producer with deep experience in media relations, storytelling and brand communication.' },
+        { img: '/_blob/98b2a8c4bbed307601bdab42d05e1faf', name: 'Umme Habiba', role: 'Head of Sales', bio: 'Qualified pharmacist with strong experience across the pharmacy and sales industries.' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

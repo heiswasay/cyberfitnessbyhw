@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cyber Fitness — Plans &amp; pricing</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Aileron';font-weight:400;src:url(/_blob/ac6100a496d7e0e32d666465c2759312) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:600;src:url(/_blob/f0a3b54c6c0490c7808f910f656adcd3) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:700;src:url(/_blob/1a6eabb20935006830858b9ab22d7603) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:800;src:url(/_blob/05347dd3a3a98f133849cfc2ffb7889d) format('woff2')}
+@font-face{font-family:'Archivo';font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/856990c91645be07e259db49d0475b43) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/bd798f073e227f7c230f5c83deee1174) format('woff2')}
+</style>
+<style>
+body{margin:0;background:#FFF7F0;color:#1C0A1B;font-family:'Aileron',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#ED3159;text-decoration:none}a:hover{color:#480E43}
+h1,h2{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-style:italic;text-transform:uppercase;margin:0}h3{font-family:'Aileron',system-ui,sans-serif;margin:0}
+p{margin:0}
+img{display:block}
+button{font-family:inherit;cursor:pointer}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+</style>
+</helmet>
+<div style="width: 100%; min-width: 0; background: #FFF7F0; overflow: hidden;">
+<dc-import name="Nav" active="pricing" hint-size="100%,77px"></dc-import>
+
+<!-- HERO + PLANS -->
+<section style="background: #FAD0DC;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 104px; display: flex; flex-direction: column; gap: 44px;">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px;">
+      <p style="font-size: 14px; color: #6B5A69;"><a href="Main.dc.html" style="color: #6B5A69;">Home</a> / Plans &amp; pricing</p>
+      <h1 style="font-size: clamp(36px, 4.2vw, 60px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 800; max-width: 880px;">Simple plans. <span style="color: #ED3159;">Bigger savings the longer you train.</span></h1>
+      <p style="font-size: 18px; line-height: 1.6; color: #5E4D5C; max-width: 620px;">Every plan includes a structured class schedule, limited recorded sessions and access to our global community. All prices in USD.</p>
+      <div role="group" aria-label="Billing period" style="display: inline-flex; padding: 6px; border-radius: 999px; background: #FFFFFF; gap: 4px; margin-top: 8px;">
+        <sc-for list="{{terms}}" as="t" hint-placeholder-count="3">
+          <sc-if value="{{t.on}}" hint-placeholder-val="{{false}}">
+            <button type="button" aria-pressed="true" onClick="{{t.pick}}" style="border: 0; padding: 12px 22px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 15px; font-weight: 800;">{{t.label}}</button>
+          </sc-if>
+          <sc-if value="{{t.off}}" hint-placeholder-val="{{true}}">
+            <button type="button" aria-pressed="false" onClick="{{t.pick}}" style="border: 0; padding: 12px 22px; border-radius: 999px; background: transparent; color: #1C0A1B; font-size: 15px; font-weight: 700;">{{t.label}}</button>
+          </sc-if>
+        </sc-for>
+      </div>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; align-items: stretch;">
+      <sc-for list="{{plans}}" as="p" hint-placeholder-count="3">
+        <sc-if value="{{p.featured}}" hint-placeholder-val="{{false}}">
+          <div style="padding: 36px; border-radius: 32px; clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%); background: #480E43; color: #FFFFFF; display: flex; flex-direction: column; gap: 22px; position: relative;">
+            <span style="align-self: flex-start; padding: 6px 12px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;">Most complete</span>
+            <div style="display: flex; flex-direction: column; gap: 8px;"><h2 style="font-size: 22px; font-weight: 800; color: #FFFFFF;">{{p.name}}</h2><p style="font-size: 15px; color: #D9C9D7;">{{p.blurb}}</p></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <p style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Archivo', sans-serif; font-stretch: 125%; font-style: italic; font-size: 64px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">{{p.price}}</span><span style="font-size: 16px; color: #D9C9D7; font-weight: 600;">{{p.per}}</span></p>
+              <p style="font-size: 14px; font-weight: 700; color: #FAD0DC; min-height: 20px;">{{p.note}}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #EADDE8;">
+              <sc-for list="{{p.features}}" as="f" hint-placeholder-count="4">
+                <div style="display: flex; gap: 10px; align-items: center;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAD0DC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M5 12l5 5 9-10"></path></svg>{{f}}</div>
+              </sc-for>
+            </div>
+            <a href="SignUp.dc.html" style="margin-top: auto; text-align: center; padding: 17px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 16px; font-weight: 800;">Choose {{p.name}}</a>
+          </div>
+        </sc-if>
+        <sc-if value="{{p.plain}}" hint-placeholder-val="{{true}}">
+          <div style="padding: 36px; border-radius: 32px; clip-path: polygon(0 0, calc(100% - 44px) 0, 100% 44px, 100% 100%, 0 100%); background: #FFFFFF; display: flex; flex-direction: column; gap: 22px;">
+            <div style="display: flex; flex-direction: column; gap: 8px;"><h2 style="font-size: 22px; font-weight: 800;">{{p.name}}</h2><p style="font-size: 15px; color: #5E4D5C;">{{p.blurb}}</p></div>
+            <div style="display: flex; flex-direction: column; gap: 6px;">
+              <p style="display: flex; align-items: baseline; gap: 8px;"><span style="font-family: 'Archivo', sans-serif; font-stretch: 125%; font-style: italic; font-size: 64px; font-weight: 800; letter-spacing: -0.03em; line-height: 1;">{{p.price}}</span><span style="font-size: 16px; color: #6B5A69; font-weight: 600;">{{p.per}}</span></p>
+              <p style="font-size: 14px; font-weight: 700; color: #ED3159; min-height: 20px;">{{p.note}}</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #3A2938;">
+              <sc-for list="{{p.features}}" as="f" hint-placeholder-count="4">
+                <div style="display: flex; gap: 10px; align-items: center;"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ED3159" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink: 0;"><path d="M5 12l5 5 9-10"></path></svg>{{f}}</div>
+              </sc-for>
+            </div>
+            <a href="SignUp.dc.html" style="margin-top: auto; text-align: center; padding: 17px; border-radius: 999px; border: 1.5px solid #480E43; color: #480E43; font-size: 16px; font-weight: 800;">Choose {{p.name}}</a>
+          </div>
+        </sc-if>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- FULL PRICE TABLE -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 36px;">
+  <div style="display: flex; flex-direction: column; gap: 14px; max-width: 680px;">
+    <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #480E43; background: #FBE836; width: fit-content; padding: 5px 10px;">All prices at a glance</p>
+    <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800;">Compare every plan.</h2>
+  </div>
+  <div style="overflow-x: auto; border-radius: 24px; border: 1px solid #F0D6DF; background: #FFFFFF;">
+    <table style="width: 100%; min-width: 640px; border-collapse: collapse; font-size: 16px;">
+      <thead>
+        <tr style="background: #FAD0DC; text-align: left;">
+          <th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 800; color: #6B5A69;">Package</th>
+          <th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 800; color: #6B5A69;">Monthly</th>
+          <th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 800; color: #6B5A69;">3 months</th>
+          <th scope="col" style="padding: 20px 24px; font-size: 14px; font-weight: 800; color: #6B5A69;">6 months</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr style="border-top: 1px solid #F5E1E8;"><th scope="row" style="padding: 20px 24px; text-align: left; font-weight: 800;">Workout</th><td style="padding: 20px 24px;">$40</td><td style="padding: 20px 24px;">$95 <span style="color: #480E43; font-weight: 700; font-size: 14px;">· save $25</span></td><td style="padding: 20px 24px;">$150 <span style="color: #480E43; font-weight: 700; font-size: 14px;">· save $90</span></td></tr>
+        <tr style="border-top: 1px solid #F5E1E8;"><th scope="row" style="padding: 20px 24px; text-align: left; font-weight: 800;">Diet plan</th><td style="padding: 20px 24px;">$30</td><td style="padding: 20px 24px;">$80 <span style="color: #480E43; font-weight: 700; font-size: 14px;">· save $10</span></td><td style="padding: 20px 24px;">$120 <span style="color: #480E43; font-weight: 700; font-size: 14px;">· save $60</span></td></tr>
+        <tr style="border-top: 1px solid #F5E1E8; background: #FFF6F8;"><th scope="row" style="padding: 20px 24px; text-align: left; font-weight: 800;">Workout + Diet plan</th><td style="padding: 20px 24px;">$50</td><td style="padding: 20px 24px;">$125 <span style="color: #480E43; font-weight: 700; font-size: 14px;">· save $25</span></td><td style="padding: 20px 24px;">$200 <span style="color: #480E43; font-weight: 700; font-size: 14px;">· save $100</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    <div style="padding: 32px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 10px;">
+      <h3 style="font-size: 21px; font-weight: 700;">1:1 sessions</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">A private session with a trainer or dietitian, added to any plan. <strong style="color: #1C0A1B;">[PRICE PER SESSION]</strong></p>
+    </div>
+    <div style="padding: 32px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 10px;">
+      <h3 style="font-size: 21px; font-weight: 700;">Corporate &amp; team plans</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">Team subscriptions for workplaces and organisations. <a href="Contact.dc.html" style="font-weight: 800;">Contact sales →</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section style="background: #FFFFFF; border-top: 1px solid #F5E1E8;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-wrap: wrap; gap: 56px;">
+    <div style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px;">
+      <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #480E43; background: #FBE836; width: fit-content; padding: 5px 10px;">Questions</p>
+      <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800;">Good to know before you join.</h2>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Something else on your mind? <a href="Contact.dc.html" style="font-weight: 800;">Ask us</a></p>
+    </div>
+    <div style="flex: 2 1 560px; min-width: 0; display: flex; flex-direction: column;">
+      <details open style="border-bottom: 1px solid #F5E1E8; padding: 24px 0;"><summary style="font-size: 19px; font-weight: 700; display: flex; justify-content: space-between; gap: 16px;">Do I have to turn my camera on?<span aria-hidden="true" style="color: #480E43;">–</span></summary><p style="font-size: 16px; line-height: 1.6; color: #5E4D5C; margin-top: 12px;">No — the camera is optional in many classes, and women’s batches are led by female trainers.</p></details>
+      <details style="border-bottom: 1px solid #F5E1E8; padding: 24px 0;"><summary style="font-size: 19px; font-weight: 700; display: flex; justify-content: space-between; gap: 16px;">How many people are in each class?<span aria-hidden="true" style="color: #480E43;">+</span></summary><p style="font-size: 16px; line-height: 1.6; color: #5E4D5C; margin-top: 12px;">Each class is limited to 10–20 members so your coach can give you real attention.</p></details>
+      <details style="border-bottom: 1px solid #F5E1E8; padding: 24px 0;"><summary style="font-size: 19px; font-weight: 700; display: flex; justify-content: space-between; gap: 16px;">What if a class is full?<span aria-hidden="true" style="color: #480E43;">+</span></summary><p style="font-size: 16px; line-height: 1.6; color: #5E4D5C; margin-top: 12px;">Join the waiting list and you’ll be enrolled automatically if a spot opens.</p></details>
+      <details style="border-bottom: 1px solid #F5E1E8; padding: 24px 0;"><summary style="font-size: 19px; font-weight: 700; display: flex; justify-content: space-between; gap: 16px;">What equipment do I need?<span aria-hidden="true" style="color: #480E43;">+</span></summary><p style="font-size: 16px; line-height: 1.6; color: #5E4D5C; margin-top: 12px;">Many classes are bodyweight only. We recommend a mat, a pair of dumbbells and a resistance band.</p></details>
+      <details style="border-bottom: 1px solid #F5E1E8; padding: 24px 0;"><summary style="font-size: 19px; font-weight: 700; display: flex; justify-content: space-between; gap: 16px;">Which time zones do you cover?<span aria-hidden="true" style="color: #480E43;">+</span></summary><p style="font-size: 16px; line-height: 1.6; color: #5E4D5C; margin-top: 12px;">Classes run morning and evening, with times for Pakistan, India, KSA, UAE, the UK and the US. Bookings adjust to your time zone.</p></details>
+      <details style="padding: 24px 0;"><summary style="font-size: 19px; font-weight: 700; display: flex; justify-content: space-between; gap: 16px;">Is my payment secure?<span aria-hidden="true" style="color: #480E43;">+</span></summary><p style="font-size: 16px; line-height: 1.6; color: #5E4D5C; margin-top: 12px;">Yes. Payments go through PCI-compliant processors (Stripe or PayPal) with SSL encryption, and we never store card numbers.</p></details>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6000}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { term: 1 };
+  }
+  renderVals() {
+    const term = this.state.term;
+    const labels = { 1: 'Monthly', 3: '3 months', 6: '6 months' };
+    const terms = [1, 3, 6].map((n) => ({
+      label: labels[n], on: n === term, off: n !== term,
+      pick: () => this.setState({ term: n })
+    }));
+    const base = [
+      { name: 'Workout', blurb: 'Unlimited live classes with certified trainers.', prices: { 1: 40, 3: 95, 6: 150 },
+        features: ['16+ live Zoom classes daily', 'Separate women’s & men’s batches', 'Small classes of 10–20', 'Progress check-ins'] },
+      { name: 'Workout + Diet', blurb: 'Live training plus your own dietitian.', featured: true, prices: { 1: 50, 3: 125, 6: 200 },
+        features: ['Everything in Workout', 'Dietitian consultation', 'Personalised meal plan', 'Meal tracking group'] },
+      { name: 'Diet plan', blurb: 'Nutrition coaching from clinical dietitians.', prices: { 1: 30, 3: 80, 6: 120 },
+        features: ['Nutrition assessment', 'Personalised meal plan', 'Meal tracking group', 'Monthly reviews'] }
+    ];
+    const plans = base.map((p) => {
+      const total = p.prices[term];
+      const full = p.prices[1] * term;
+      const perMonth = (total / term).toFixed(2).replace(/\.00$/, '');
+      return {
+        name: p.name, blurb: p.blurb, features: p.features,
+        featured: !!p.featured, plain: !p.featured,
+        price: '$' + total,
+        per: term === 1 ? '/ month' : 'for ' + term + ' months',
+        note: term === 1 ? 'Billed monthly' : '$' + perMonth + '/month · save $' + (full - total)
+      };
+    });
+    return { terms, plans };
+  }
+}
+</script>
+</body>
+</html>

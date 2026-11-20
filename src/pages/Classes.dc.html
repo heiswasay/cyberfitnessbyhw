@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cyber Fitness — Online classes</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Aileron';font-weight:400;src:url(/_blob/ac6100a496d7e0e32d666465c2759312) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:600;src:url(/_blob/f0a3b54c6c0490c7808f910f656adcd3) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:700;src:url(/_blob/1a6eabb20935006830858b9ab22d7603) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:800;src:url(/_blob/05347dd3a3a98f133849cfc2ffb7889d) format('woff2')}
+@font-face{font-family:'Archivo';font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/856990c91645be07e259db49d0475b43) format('woff2')}
+@font-face{font-family:'Archivo';font-style:normal;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/bd798f073e227f7c230f5c83deee1174) format('woff2')}
+</style>
+<style>
+body{margin:0;background:#FFF7F0;color:#1C0A1B;font-family:'Aileron',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#ED3159;text-decoration:none}a:hover{color:#480E43}
+h1,h2{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-style:italic;text-transform:uppercase;margin:0}h3{font-family:'Aileron',system-ui,sans-serif;margin:0}
+p{margin:0}
+img{display:block}
+</style>
+</helmet>
+<div style="width: 100%; min-width: 0; background: #FFF7F0; overflow: hidden;">
+<dc-import name="Nav" active="classes" hint-size="100%,77px"></dc-import>
+
+<!-- HERO -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 96px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+  <div style="flex: 1 1 520px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+    <p style="font-size: 14px; color: #6B5A69;"><a href="Main.dc.html" style="color: #6B5A69;">Home</a> / Online classes</p>
+    <h1 style="font-size: clamp(36px, 4.2vw, 60px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 800;">Live online classes, <span style="color: #ED3159;">designed for real results.</span></h1>
+    <p style="font-size: 18px; line-height: 1.65; color: #5E4D5C; max-width: 560px;">Coach-led classes on Zoom from early morning to past midnight. There are no fixed batches — join on any day, choose any class that fits your day, and change times whenever you need.</p>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="SignUp.dc.html" style="padding: 18px 30px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 17px; font-weight: 700;">Start today</a>
+      <a href="#schedule" style="padding: 18px 28px; border-radius: 999px; border: 1.5px solid #E8C3D0; color: #1C0A1B; font-size: 17px; font-weight: 700;">View the live schedule</a>
+      <a href="Book.dc.html" style="padding: 18px 28px; border-radius: 999px; border: 1.5px solid #480E43; color: #480E43; font-size: 17px; font-weight: 700;">Book a fitness assessment</a>
+    </div>
+  </div>
+  <div style="flex: 1 1 460px; min-width: 0; position: relative; height: 560px;">
+    <div style="position: absolute; inset: 0; border-radius: 36px; clip-path: polygon(0 0, calc(100% - 56px) 0, 100% 56px, 100% 100%, 0 100%); overflow: hidden; background: #F6DCE4;">
+      <img src="/_blob/2b920c4d3782a2426675ed7be20d60f7" alt="Members doing a plank workout during a class" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+    <div style="position: absolute; left: 24px; right: 24px; bottom: 24px; padding: 20px 22px; border-radius: 22px; background: #FFFFFF; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px;">
+      <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; font-weight: 800; color: #ED3159;">01</span><span style="font-size: 14px; font-weight: 700;">Warm-up</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; font-weight: 800; color: #ED3159;">02</span><span style="font-size: 14px; font-weight: 700;">Skill &amp; strength</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; font-weight: 800; color: #ED3159;">03</span><span style="font-size: 14px; font-weight: 700;">Conditioning</span></div>
+      <div style="display: flex; flex-direction: column; gap: 4px;"><span style="font-size: 12px; font-weight: 800; color: #ED3159;">04</span><span style="font-size: 14px; font-weight: 700;">Cool-down</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHEDULE & BOOKING -->
+<section style="background: #FAD0DC;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 48px;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 24px;">
+      <div style="display: flex; flex-direction: column; gap: 16px; max-width: 680px;">
+        <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #480E43; background: #FBE836; width: fit-content; padding: 5px 10px;">Schedule &amp; booking</p>
+        <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800;">16 live classes a day. Booked in a few taps.</h2>
+      </div>
+      <p style="font-size: 17px; line-height: 1.6; color: #5E4D5C; max-width: 440px;">Time slots are published weekly and adjust to your time zone when you book. Every class is marked as a women’s batch, men’s batch or mixed session.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+      <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="width: 48px; height: 48px; border-radius: 50%; background: #ED3159; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-stretch: 125%; font-style: italic; font-size: 20px; font-weight: 800;">1</span>
+        <h3 style="font-size: 22px; font-weight: 700;">Join any day, any slot</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">No batch start dates. Pick whichever class suits today — and a different one tomorrow.</p>
+      </div>
+      <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="width: 48px; height: 48px; border-radius: 50%; background: #ED3159; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-stretch: 125%; font-style: italic; font-size: 20px; font-weight: 800;">2</span>
+        <h3 style="font-size: 22px; font-weight: 700;">Small classes, real attention</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Each class is limited to 10–20 members, so your coach can actually see and correct you.</p>
+      </div>
+      <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; display: flex; flex-direction: column; gap: 16px;">
+        <span style="width: 48px; height: 48px; border-radius: 50%; background: #ED3159; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-family: 'Archivo', sans-serif; font-stretch: 125%; font-style: italic; font-size: 20px; font-weight: 800;">3</span>
+        <h3 style="font-size: 22px; font-weight: 700;">Never miss out</h3>
+        <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Class full? The waiting list enrols you automatically when a spot opens.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLASS TYPES -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 48px;">
+  <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px;">
+    <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #480E43; background: #FBE836; width: fit-content; padding: 5px 10px;">Class types</p>
+    <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800;">Find the class that fits your goal.</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px;">
+    <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Fat Loss &amp; Conditioning</h3><span style="padding: 6px 12px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 12px; font-weight: 800;">HIIT</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">High-energy metabolic conditioning and intervals for calorie burn and cardio fitness. Bodyweight or light equipment, scalable for every level.</p>
+    </div>
+    <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Toning &amp; Conditioning</h3><span style="padding: 6px 12px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 12px; font-weight: 800;">Circuits</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Circuit-style sessions for muscular endurance and lean tone, with mobility and stability work to prevent injury.</p>
+    </div>
+    <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Postnatal Fitness</h3><span style="padding: 6px 12px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 12px; font-weight: 800;">New mothers</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">A medically aware program focusing on pelvic floor reactivation, core rehab and gradual strength. Medical clearance required.</p>
+    </div>
+    <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Strength &amp; Hypertrophy</h3><span style="padding: 6px 12px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 12px; font-weight: 800;">Build muscle</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Progressive strength sessions on technique and load: mobility warm-up, main lifts, accessory work and coaching cues.</p>
+    </div>
+    <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Mobility &amp; Flexibility</h3><span style="padding: 6px 12px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 12px; font-weight: 800;">Recovery</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Low-load classes that improve range of motion, ease pain and correct movement patterns. Ideal between intense sessions.</p>
+    </div>
+    <div style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Beginner Foundations</h3><span style="padding: 6px 12px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 12px; font-weight: 800;">Start here</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Movement quality, breathing and the basics of strength and conditioning. Great for newcomers and anyone returning to exercise.</p>
+    </div>
+    <a href="Programs.dc.html#diastasis" style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; color: #1C0A1B; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Diastasis Recti &amp; Pelvic Floor</h3><span style="padding: 6px 12px; border-radius: 999px; background: #D09FC9; color: #2A0828; font-size: 12px; font-weight: 800;">Core healing</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Slow, controlled core work to close the abdominal gap and strengthen the pelvic floor. Mon–Thu with Faiza Shehzad.</p>
+      <span style="font-size: 15px; font-weight: 800; color: #ED3159;">Join the DR class →</span>
+    </a>
+    <a href="Programs.dc.html#seniors" style="padding: 36px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; color: #1C0A1B; display: flex; flex-direction: column; gap: 14px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><h3 style="font-size: 24px; font-weight: 700;">Senior Citizens’ Sessions</h3><span style="padding: 6px 12px; border-radius: 999px; background: #FBE836; color: #480E43; font-size: 12px; font-weight: 800;">60+</span></div>
+      <p style="font-size: 16px; line-height: 1.6; color: #5E4D5C;">Balance, mobility and chair-supported strength at a gentle pace — low impact and joint friendly.</p>
+      <span style="font-size: 15px; font-weight: 800; color: #ED3159;">Reserve a session →</span>
+    </a>
+  </div>
+</section>
+
+<!-- WEEKLY SCHEDULE -->
+<section id="schedule" style="background: #480E43; color: #FFFFFF;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+    <div style="flex: 1 1 380px; min-width: 0; display: flex; flex-direction: column; gap: 24px;">
+      <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #FBE836;">This month’s live schedule</p>
+      <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800; color: #FFFFFF;">Morning to midnight. Join whichever fits.</h2>
+      <p style="font-size: 17px; line-height: 1.6; color: #D9C9D7; max-width: 640px;">Choose your time zone — Pakistan, India, KSA, UAE, the UK or Europe — and filter by day. You’re never locked into one slot.</p>
+      <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+        <a href="SignUp.dc.html" style="padding: 17px 26px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 16px; font-weight: 800;">Join a class today</a>
+        <a href="Book.dc.html" style="padding: 17px 26px; border-radius: 999px; border: 1.5px solid #8A4A85; color: #FFFFFF; font-size: 16px; font-weight: 700;">Book a consultation</a>
+      </div>
+    </div>
+    <div style="flex: 1 1 100%; min-width: 0;">
+      <dc-import name="Schedule" hint-size="100%,1500px"></dc-import>
+    </div>
+  </div>
+</section>
+
+<!-- TECH & TOOLS -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 104px 32px; display: flex; flex-direction: column; gap: 48px;">
+  <div style="display: flex; flex-direction: column; gap: 16px; max-width: 720px;">
+    <p style="font-size: 13px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #480E43; background: #FBE836; width: fit-content; padding: 5px 10px;">Tech &amp; tools</p>
+    <h2 style="font-size: clamp(28px, 3.1vw, 42px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800;">All you need to join.</h2>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
+    <div style="padding: 32px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #FAD0DC; color: #ED3159; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0"></path><circle cx="12" cy="19.5" r="1" fill="currentColor"></circle></svg></div>
+      <h3 style="font-size: 20px; font-weight: 700;">Stable internet</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">5 Mbps or faster is recommended.</p>
+    </div>
+    <div style="padding: 32px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #FAD0DC; color: #ED3159; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="12" rx="2"></rect><path d="M8 20h8M12 16v4"></path></svg></div>
+      <h3 style="font-size: 20px; font-weight: 700;">Any device</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">Phone, tablet, laptop or desktop. Camera optional in some classes.</p>
+    </div>
+    <div style="padding: 32px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #FAD0DC; color: #ED3159; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="3"></rect><path d="M16 10.5l6-3.5v10l-6-3.5"></path></svg></div>
+      <h3 style="font-size: 20px; font-weight: 700;">Zoom app</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">Keep the latest version installed.</p>
+    </div>
+    <div style="padding: 32px; border-radius: 28px; background: #FFFFFF; border: 1px solid #F5E1E8; display: flex; flex-direction: column; gap: 14px;">
+      <div style="width: 52px; height: 52px; border-radius: 16px; background: #FAD0DC; color: #ED3159; display: flex; align-items: center; justify-content: center;"><svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7v10M3 9v6M18 7v10M21 9v6M6 12h12"></path></svg></div>
+      <h3 style="font-size: 20px; font-weight: 700;">Simple equipment</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #5E4D5C;">Many classes are bodyweight only. Recommended: a mat, dumbbells and a resistance band.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="max-width: 1280px; margin: 0 auto; padding: 0 32px 104px;">
+  <div style="border-radius: 40px; clip-path: polygon(0 0, calc(100% - 64px) 0, 100% 64px, 100% 100%, 0 100%); background: #480E43; color: #FFFFFF; padding: 64px 56px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 32px;">
+    <div style="display: flex; flex-direction: column; gap: 14px; max-width: 640px;">
+      <h2 style="font-size: clamp(28px, 3vw, 40px); line-height: 1.08; letter-spacing: -0.01em; font-weight: 800; color: #FFFFFF;">Ready for your first live class?</h2>
+      <p style="font-size: 17px; line-height: 1.6; color: #EADDE8;">Choose a plan and book a class in your time zone today.</p>
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+      <a href="Pricing.dc.html" style="padding: 18px 28px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 16px; font-weight: 800;">See plans &amp; pricing</a>
+      <a href="Contact.dc.html" style="padding: 18px 28px; border-radius: 999px; border: 1.5px solid #8A4A85; color: #FFFFFF; font-size: 16px; font-weight: 700;">Ask a question</a>
+    </div>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":6200}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

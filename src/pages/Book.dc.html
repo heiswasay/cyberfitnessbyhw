@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cyber Fitness — Book a consultation or assessment</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Aileron';font-weight:400;src:url(/_blob/ac6100a496d7e0e32d666465c2759312) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:600;src:url(/_blob/f0a3b54c6c0490c7808f910f656adcd3) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:700;src:url(/_blob/1a6eabb20935006830858b9ab22d7603) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:800;src:url(/_blob/05347dd3a3a98f133849cfc2ffb7889d) format('woff2')}
+@font-face{font-family:'Archivo';font-style:italic;font-weight:100 900;font-stretch:62% 125%;src:url(/_blob/856990c91645be07e259db49d0475b43) format('woff2')}
+</style>
+<style>
+body{margin:0;background:#FFF7F0;color:#1C0A1B;font-family:'Aileron',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#ED3159;text-decoration:none}a:hover{color:#480E43}
+h1,h2{font-family:'Archivo',system-ui,sans-serif;font-stretch:125%;font-style:italic;text-transform:uppercase;margin:0}h3{font-family:'Aileron',system-ui,sans-serif;margin:0}
+p{margin:0}
+ul{margin:0;padding:0;list-style:none}
+input,select,textarea,button{font-family:inherit}
+label{font-size:14px;font-weight:700;color:#480E43}
+</style>
+</helmet>
+<div style="width: 100%; min-width: 0; background: #FFF7F0; overflow: hidden;">
+<dc-import name="Nav" active="book" hint-size="100%,77px"></dc-import>
+
+<section style="max-width: 1280px; margin: 0 auto; padding: 72px 32px 104px; display: flex; flex-wrap: wrap; gap: 56px; align-items: flex-start;">
+  <!-- LEFT: choose -->
+  <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
+    <p style="font-size: 14px; color: #6B5A69;"><a href="Main.dc.html" style="color: #6B5A69;">Home</a> / Book</p>
+    <h1 style="font-size: clamp(36px, 4.2vw, 60px); line-height: 1.02; letter-spacing: -0.01em; font-weight: 800;">Start <span style="background: #FBE836; padding: 0 0.12em;">any day.</span> Book your first step.</h1>
+    <p style="font-size: 18px; line-height: 1.6; color: #5E4D5C;">There are no batch start dates. Tell us when suits you and a coach will confirm a time on WhatsApp.</p>
+
+    <div role="radiogroup" aria-label="What would you like to book?" style="display: flex; flex-direction: column; gap: 14px;">
+      <sc-for list="{{options}}" as="o" hint-placeholder-count="2">
+        <sc-if value="{{o.on}}" hint-placeholder-val="{{false}}">
+          <button type="button" role="radio" aria-checked="true" onClick="{{o.pick}}" style="text-align: left; padding: 26px 28px; border-radius: 26px; border: 2px solid #ED3159; background: #FFFFFF; display: flex; gap: 18px; align-items: flex-start; cursor: pointer;">
+            <span aria-hidden="true" style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 8px solid #ED3159; box-sizing: border-box; margin-top: 2px;"></span>
+            <span style="display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-size: 21px; font-weight: 800; color: #1C0A1B;">{{o.title}}</span>
+              <span style="font-size: 16px; line-height: 1.55; color: #5E4D5C;">{{o.desc}}</span>
+            </span>
+          </button>
+        </sc-if>
+        <sc-if value="{{o.off}}" hint-placeholder-val="{{true}}">
+          <button type="button" role="radio" aria-checked="false" onClick="{{o.pick}}" style="text-align: left; padding: 26px 28px; border-radius: 26px; border: 2px solid #F0D6DF; background: #FFFFFF; display: flex; gap: 18px; align-items: flex-start; cursor: pointer;">
+            <span aria-hidden="true" style="flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; border: 2px solid #C9A9BD; box-sizing: border-box; margin-top: 2px;"></span>
+            <span style="display: flex; flex-direction: column; gap: 8px;">
+              <span style="font-size: 21px; font-weight: 800; color: #1C0A1B;">{{o.title}}</span>
+              <span style="font-size: 16px; line-height: 1.55; color: #5E4D5C;">{{o.desc}}</span>
+            </span>
+          </button>
+        </sc-if>
+      </sc-for>
+    </div>
+
+    <div style="padding: 28px; border-radius: 26px; background: #480E43; color: #FFFFFF; display: flex; flex-direction: column; gap: 14px;">
+      <p style="font-size: 13px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: #FBE836;">What happens in your {{kindShort}}</p>
+      <ul style="display: flex; flex-direction: column; gap: 10px;">
+        <sc-for list="{{steps}}" as="s" hint-placeholder-count="3">
+          <li style="display: flex; gap: 12px; font-size: 16px; line-height: 1.5; color: #EADDE8;"><span aria-hidden="true" style="color: #FAD0DC; font-weight: 800;">→</span><span>{{s.text}}</span></li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+
+  <!-- RIGHT: form -->
+  <div style="flex: 1 1 460px; min-width: 0; padding: 40px; border-radius: 36px; clip-path: polygon(0 0, calc(100% - 52px) 0, 100% 52px, 100% 100%, 0 100%); background: #FAD0DC; box-sizing: border-box;">
+    <sc-if value="{{sent}}" hint-placeholder-val="{{false}}">
+      <div role="status" style="display: flex; flex-direction: column; gap: 18px; padding: 40px 8px; align-items: flex-start;">
+        <span aria-hidden="true" style="width: 64px; height: 64px; border-radius: 50%; background: #ED3159; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 30px; font-weight: 800;">✓</span>
+        <h2 style="font-size: 32px; line-height: 1.08; font-weight: 800; color: #480E43;">Request received.</h2>
+        <p style="font-size: 17px; line-height: 1.6; color: #3A1036;">Thank you. Our team will message you on WhatsApp to confirm your {{kindShort}} time.</p>
+        <button type="button" onClick="{{reset}}" style="min-height: 48px; padding: 14px 24px; border-radius: 999px; border: 1.5px solid #480E43; background: transparent; color: #480E43; font-size: 16px; font-weight: 700; cursor: pointer;">Book another</button>
+      </div>
+    </sc-if>
+    <sc-if value="{{notSent}}" hint-placeholder-val="{{true}}">
+      <div style="display: flex; flex-direction: column; gap: 20px;">
+        <h2 style="font-size: 28px; line-height: 1.1; font-weight: 800; color: #480E43;">Book your {{kindShort}}</h2>
+        <div style="display: flex; flex-direction: column; gap: 8px;"><label for="bk-name">Full name</label><input id="bk-name" type="text" autocomplete="name" placeholder="Your name" style="min-height: 52px; padding: 14px 18px; border-radius: 16px; border: 1.5px solid #E8C3D0; background: #FFFFFF; font-size: 16px; box-sizing: border-box;"></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;"><label for="bk-wa">WhatsApp number</label><input id="bk-wa" type="tel" autocomplete="tel" placeholder="+44 …" style="min-height: 52px; padding: 14px 18px; border-radius: 16px; border: 1.5px solid #E8C3D0; background: #FFFFFF; font-size: 16px; box-sizing: border-box;"></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><label for="bk-country">Country</label><select id="bk-country" style="min-height: 52px; padding: 14px 18px; border-radius: 16px; border: 1.5px solid #E8C3D0; background: #FFFFFF; font-size: 16px;"><option>Pakistan</option><option>United Kingdom</option><option>UAE</option><option>Saudi Arabia</option><option>India</option><option>Europe</option><option>Other</option></select></div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 8px;"><label for="bk-goal">I’m interested in</label><select id="bk-goal" style="min-height: 52px; padding: 14px 18px; border-radius: 16px; border: 1.5px solid #E8C3D0; background: #FFFFFF; font-size: 16px;"><option>General fitness &amp; strength</option><option>Weight loss</option><option>Postpartum package (after delivery)</option><option>Diastasis recti class</option><option>Senior citizens’ sessions</option><option>Yoga / Zumba</option><option>Not sure yet</option></select></div>
+        <fieldset style="border: 0; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px;">
+          <legend style="font-size: 14px; font-weight: 700; color: #480E43; margin-bottom: 10px;">Best time to reach you</legend>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+            <label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; font-weight: 600; color: #1C0A1B;"><input type="radio" name="bk-time" checked> Morning</label>
+            <label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; font-weight: 600; color: #1C0A1B;"><input type="radio" name="bk-time"> Afternoon</label>
+            <label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; font-weight: 600; color: #1C0A1B;"><input type="radio" name="bk-time"> Evening</label>
+            <label style="display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px; border-radius: 999px; background: #FFFFFF; font-weight: 600; color: #1C0A1B;"><input type="radio" name="bk-time"> Late night</label>
+          </div>
+        </fieldset>
+        <div style="display: flex; flex-direction: column; gap: 8px;"><label for="bk-note">Anything we should know? <span style="font-weight: 400; color: #6B5A69;">(optional)</span></label><textarea id="bk-note" rows="3" placeholder="Injuries, recent delivery, medical conditions…" style="padding: 14px 18px; border-radius: 16px; border: 1.5px solid #E8C3D0; background: #FFFFFF; font-size: 16px; resize: vertical; box-sizing: border-box;"></textarea></div>
+        <button type="button" onClick="{{submit}}" style="min-height: 56px; padding: 18px 28px; border-radius: 999px; border: 0; background: #ED3159; color: #FFFFFF; font-size: 17px; font-weight: 800; cursor: pointer;">Request my {{kindShort}}</button>
+        <p style="font-size: 14px; color: #5E4D5C; text-align: center;">Prefer to chat? <a href="Contact.dc.html" style="font-weight: 800; color: #480E43;">Message us on WhatsApp</a></p>
+      </div>
+    </sc-if>
+  </div>
+</section>
+
+<dc-import name="Footer" hint-size="100%,520px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":1900}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { kind: 'consult', sent: false };
+  }
+  renderVals() {
+    const kinds = {
+      consult: {
+        title: 'Book a consultation',
+        short: 'consultation',
+        desc: 'A friendly call with our team about your goals, health and routine — and which classes or programme suit you.',
+        steps: ['We talk through your goals, schedule and any health concerns.', 'We suggest the right classes, plan or special programme.', 'You can start the very next day — no waiting for a new batch.']
+      },
+      assess: {
+        title: 'Book a fitness assessment',
+        short: 'fitness assessment',
+        desc: 'A live video check with a coach: posture, mobility, core, strength and fitness level — so your plan starts in the right place.',
+        steps: ['A coach takes you through simple movement and strength checks on video.', 'We check your core, including for diastasis recti if you’ve had a baby.', 'You get a starting level and the classes we recommend for you.']
+      }
+    };
+    const k = kinds[this.state.kind];
+    return {
+      options: ['consult', 'assess'].map((key) => ({ title: kinds[key].title, desc: kinds[key].desc, on: key === this.state.kind, off: key !== this.state.kind, pick: () => this.setState({ kind: key, sent: false }) })),
+      kindShort: k.short,
+      steps: k.steps.map((text) => ({ text })),
+      sent: this.state.sent,
+      notSent: !this.state.sent,
+      submit: () => this.setState({ sent: true }),
+      reset: () => this.setState({ sent: false })
+    };
+  }
+}
+</script>
+</body>
+</html>

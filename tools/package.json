@@ -1,0 +1,7 @@
+{
+  "name": "cyberfitness-site-tools",
+  "private": true,
+  "description": "Builds the static Cyber Fitness website into ../public",
+  "scripts": { "build": "node build.js" },
+  "devDependencies": { "playwright": "^1.63.0" }
+}

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cyber Fitness — Menu</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+@font-face{font-family:'Aileron';font-weight:400;src:url(/_blob/ac6100a496d7e0e32d666465c2759312) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:600;src:url(/_blob/f0a3b54c6c0490c7808f910f656adcd3) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:700;src:url(/_blob/1a6eabb20935006830858b9ab22d7603) format('woff2')}
+@font-face{font-family:'Aileron';font-weight:800;src:url(/_blob/05347dd3a3a98f133849cfc2ffb7889d) format('woff2')}
+</style>
+<style>body{margin:0}</style>
+</helmet>
+<header style="width: 100%; font-family: 'Aileron', system-ui, sans-serif; color: #1C0A1B; background: #FFF7F0; border-bottom: 1px solid #F5E1E8;">
+  <div style="max-width: 1280px; margin: 0 auto; padding: 18px 32px; box-sizing: border-box; display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap;">
+    <a href="Main.dc.html" aria-label="Cyber Fitness home" style="display: block;"><img src="/_blob/693b51387321b7eb6fab059cc92bd41c" alt="Cyber Fitness" style="height: 40px; width: auto; display: block;"></a>
+    <nav aria-label="Main" style="display: flex; gap: 2px; flex-wrap: wrap; align-items: center;">
+      <sc-for list="{{links}}" as="link" hint-placeholder-count="8">
+        <sc-if value="{{link.active}}" hint-placeholder-val="{{false}}">
+          <a href="{{link.href}}" aria-current="page" style="padding: 9px 11px; border-radius: 999px; background: #FAD0DC; color: #480E43; font-size: 15px; font-weight: 800; text-decoration: none;">{{link.label}}</a>
+        </sc-if>
+        <sc-if value="{{link.idle}}" hint-placeholder-val="{{true}}">
+          <a href="{{link.href}}" style="padding: 9px 11px; border-radius: 999px; color: #1C0A1B; font-size: 15px; font-weight: 600; text-decoration: none;">{{link.label}}</a>
+        </sc-if>
+      </sc-for>
+    </nav>
+    <div style="display: flex; gap: 8px; align-items: center;">
+      <a href="Book.dc.html" style="padding: 11px 16px; border-radius: 999px; border: 1.5px solid #480E43; font-size: 15px; font-weight: 700; color: #480E43; text-decoration: none;">Book consultation</a>
+      <a href="SignUp.dc.html" style="padding: 12px 20px; border-radius: 999px; background: #ED3159; color: #FFFFFF; font-size: 15px; font-weight: 700; text-decoration: none;">Join now</a>
+    </div>
+  </div>
+</header>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"active":{"editor":"enum","options":["home","about","classes","programs","trainers","nutrition","results","pricing","press","book","none"],"default":"home"},"$preview":{"width":1440,"height":80}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const active = this.props.active ?? 'home';
+    const items = [
+      ['home', 'Home', 'Main.dc.html'],
+      ['about', 'About', 'About.dc.html'],
+      ['classes', 'Live classes', 'Classes.dc.html'],
+      ['programs', 'Programmes', 'Programs.dc.html'],
+      ['trainers', 'Coaches', 'Trainers.dc.html'],
+      ['nutrition', 'Nutrition', 'Nutrition.dc.html'],
+      ['results', 'Results', 'Transformations.dc.html'],
+      ['pricing', 'Pricing', 'Pricing.dc.html'],
+      ['press', 'Press', 'Press.dc.html']
+    ];
+    return {
+      links: items.map(([key, label, href]) => ({ key, label, href, active: key === active, idle: key !== active }))
+    };
+  }
+}
+</script>
+</body>
+</html>
